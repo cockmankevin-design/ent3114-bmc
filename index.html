@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thesis — Business Model Canvas &amp; Key Assumptions</title>
+<meta name="description" content="BMC and key assumptions for Thesis. ENT 3114 New Venture Laboratory, FGCU.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0d1014;
+    --panel:#141920;
+    --panel-2:#1a212b;
+    --line:#252d38;
+    --text:#e6e9ee;
+    --muted:#98a2b3;
+    --dim:#6b7684;
+    --bet:#e0a944;
+    --bet-dim:#7a5c22;
+    --live:#4fbfa8;
+    --kill:#e07a5f;
+    --maxw:1200px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--ink);color:var(--text);
+    font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400;letter-spacing:.01em}
+
+  /* ---------- header ---------- */
+  header{border-bottom:1px solid var(--line);padding:56px 0 44px;background:
+    radial-gradient(900px 320px at 12% -40%, rgba(224,169,68,.10), transparent 70%);}
+  .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin:0 0 20px}
+  h1.title{font-size:clamp(44px,7vw,84px);line-height:1;margin:0 0 18px}
+  .lede{max-width:60ch;color:var(--muted);font-size:18px;margin:0 0 28px}
+  .lede b{color:var(--text);font-weight:600}
+  .meta{display:flex;flex-wrap:wrap;gap:8px 28px;font-size:13px;color:var(--dim);
+        border-top:1px solid var(--line);padding-top:20px}
+  .meta span b{color:var(--muted);font-weight:500}
+
+  /* ---------- generic section ---------- */
+  section{padding:64px 0;border-bottom:1px solid var(--line)}
+  .sec-head{margin-bottom:32px}
+  .sec-num{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--bet);margin:0 0 10px}
+  h2{font-size:clamp(28px,4vw,40px);line-height:1.1;margin:0 0 12px}
+  .sec-sub{color:var(--muted);max-width:66ch;margin:0}
+
+  /* ---------- problem ---------- */
+  .statement{
+    background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--bet);
+    border-radius:4px;padding:28px 30px;margin:0 0 24px;
+  }
+  .statement .label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin:0 0 12px}
+  .statement p{margin:0;font-size:clamp(19px,2.4vw,25px);line-height:1.45}
+  .statement em{color:var(--bet);font-style:normal}
+  .pair{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:24px 26px}
+  .card h3{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin:0 0 12px;font-weight:600}
+  .card p{margin:0 0 12px;color:var(--muted)}
+  .card p:last-child{margin-bottom:0}
+  .card p b{color:var(--text);font-weight:600}
+
+  /* ---------- canvas ---------- */
+  .canvas-note{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+    font-size:13px;color:var(--dim);margin:0 0 22px}
+  .canvas-note .dot{width:7px;height:7px;border-radius:50%;background:var(--bet);display:inline-block}
+  .canvas-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:6px}
+  .canvas{
+    display:grid;min-width:900px;gap:1px;background:var(--line);
+    border:1px solid var(--line);border-radius:4px;overflow:hidden;
+    grid-template-columns:repeat(5,1fr);
+    grid-template-rows:auto auto auto;
+    grid-template-areas:
+      "kp ka vp cr cs"
+      "kp kr vp ch cs"
+      "cost cost cost rev rev";
+  }
+  .box{background:var(--panel);padding:20px 20px 22px;display:flex;flex-direction:column;min-height:150px}
+  .box.kp{grid-area:kp} .box.ka{grid-area:ka} .box.kr{grid-area:kr}
+  .box.vp{grid-area:vp;background:var(--panel-2)} .box.cr{grid-area:cr} .box.ch{grid-area:ch}
+  .box.cs{grid-area:cs;background:var(--panel-2)} .box.cost{grid-area:cost} .box.rev{grid-area:rev}
+  .box .bt{font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;color:var(--text);margin:0 0 4px}
+  .box .bet-line{font-size:11.5px;color:var(--bet);font-style:italic;margin:0 0 14px;letter-spacing:.01em}
+  .box ul{margin:0;padding:0;list-style:none}
+  .box li{font-size:13.5px;line-height:1.5;color:var(--muted);padding-left:14px;position:relative;margin-bottom:9px}
+  .box li:before{content:"";position:absolute;left:0;top:9px;width:5px;height:1px;background:var(--dim)}
+  .box li:last-child{margin-bottom:0}
+  .box li b{color:var(--text);font-weight:600}
+  .box .head-claim{font-size:15px;line-height:1.45;color:var(--text);margin:0 0 12px}
+  .box li.neg{color:var(--dim)}
+  .box li.neg:before{background:var(--kill)}
+
+  /* ---------- leap of faith ---------- */
+  .leap{
+    background:linear-gradient(180deg,rgba(224,169,68,.09),rgba(224,169,68,.02));
+    border:1px solid var(--bet-dim);border-radius:6px;padding:36px 34px;
+  }
+  .leap .tag{display:inline-block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ink);background:var(--bet);padding:5px 10px;border-radius:3px;font-weight:700;margin:0 0 20px}
+  .leap blockquote{margin:0 0 26px;font-size:clamp(20px,2.8vw,29px);line-height:1.4;
+    font-family:"Instrument Serif",Georgia,serif}
+  .leap-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;border-top:1px solid var(--bet-dim);padding-top:24px}
+  .leap-grid h4{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--bet);margin:0 0 10px;font-weight:700}
+  .leap-grid p{margin:0;color:var(--muted);font-size:14.5px}
+  .leap-grid p b{color:var(--text)}
+
+  /* ---------- assumptions ---------- */
+  .a-list{display:flex;flex-direction:column;gap:16px}
+  .a{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:24px 26px}
+  .a-top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+  .a-n{font-size:12px;color:var(--dim);font-variant-numeric:tabular-nums;font-weight:600}
+  .chip{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
+    padding:4px 9px;border-radius:3px;border:1px solid var(--line);color:var(--muted);background:var(--ink)}
+  .chip.blk{color:var(--live);border-color:rgba(79,191,168,.35)}
+  .a-claim{font-size:17.5px;line-height:1.45;margin:0 0 18px;color:var(--text)}
+  .a-claim .wb{color:var(--bet)}
+  .a-rows{display:grid;grid-template-columns:1.4fr 1fr;gap:18px;border-top:1px solid var(--line);padding-top:16px}
+  .a-rows h5{font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--dim);margin:0 0 7px;font-weight:700}
+  .a-rows p{margin:0;font-size:14px;color:var(--muted)}
+  .a-rows p b{color:var(--text)}
+  .cost-tag{font-size:12px;color:var(--dim);margin-top:10px;display:block}
+
+  /* ---------- ladder ---------- */
+  .ladder{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:4px;overflow:hidden}
+  .rung{display:grid;grid-template-columns:52px 1fr 150px;gap:20px;align-items:start;
+    padding:20px 24px;background:var(--panel);border-bottom:1px solid var(--line)}
+  .rung:last-child{border-bottom:none}
+  .rung.now{background:var(--panel-2);border-left:3px solid var(--bet);padding-left:21px}
+  .rung .r-n{font-family:"Instrument Serif",Georgia,serif;font-size:30px;color:var(--dim);line-height:1}
+  .rung.now .r-n{color:var(--bet)}
+  .rung h4{margin:0 0 6px;font-size:16px}
+  .rung p{margin:0;font-size:14px;color:var(--muted)}
+  .rung .r-cost{font-size:12.5px;color:var(--dim);text-align:right}
+  .rung .r-cost b{display:block;color:var(--muted);font-weight:600}
+
+  /* ---------- next ---------- */
+  .next{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .next .card h3{color:var(--bet)}
+
+  footer{padding:44px 0 72px;color:var(--dim);font-size:13px}
+  footer p{margin:0 0 8px;max-width:70ch}
+
+  @media (max-width:860px){
+    .pair,.leap-grid,.a-rows,.next{grid-template-columns:1fr}
+    .rung{grid-template-columns:40px 1fr;gap:14px}
+    .rung .r-cost{grid-column:2;text-align:left;margin-top:6px}
+    section{padding:48px 0}
+    header{padding:40px 0 32px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="eyebrow">ENT 3114 &middot; New Venture Laboratory &middot; Module 3</p>
+    <h1 class="title serif">Thesis</h1>
+    <p class="lede">Nine boxes. Nine bets. A first-draft Business Model Canvas for a venture that
+      teaches young adults to invest by making them <b>put real money down and write why</b> &mdash; and the
+      list of assumptions underneath it that could each be wrong.</p>
+    <div class="meta">
+      <span><b>Kevin Cockman</b></span>
+      <span>BMC &amp; Key Assumptions Assignment</span>
+      <span>Prof. Mark Bole</span>
+      <span>August 31, 2026</span>
+    </div>
+  </div>
+</header>
+
+<!-- 1. THE PROBLEM -->
+<section id="problem">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-num">01 &mdash; Carried forward</p>
+      <h2 class="serif">The problem this canvas is built on</h2>
+      <p class="sec-sub">Every cell below is downstream of this statement. If the root cause is wrong,
+        the canvas is wrong, and no amount of tidy boxes fixes it.</p>
+    </div>
+
+    <div class="statement">
+      <p class="label">Problem statement</p>
+      <p>Young adults with their first real income never start investing <em>not because</em> they lack
+        access to financial information, <em>but because</em> every resource available to them teaches
+        without stakes &mdash; and nothing about money sticks until a decision has a consequence you feel.</p>
+    </div>
+
+    <div class="pair">
+      <div class="card">
+        <h3>Root cause</h3>
+        <p>Financial education is delivered as <b>content</b>. Content without consequence does not change
+          behavior. A student can watch forty hours of investing videos, pass a quiz, and still have a
+          brokerage app on their phone they have never funded.</p>
+        <p>The gap is not knowledge. It is the absence of a first decision that costs something.</p>
+      </div>
+      <div class="card">
+        <h3>My unique insight (and why I believe it)</h3>
+        <p>The people who need this most are not uninformed. <b>They can already explain what an index
+          fund is and still have never opened an account.</b> That single observation kills the
+          "more education" solution that almost everyone else builds.</p>
+        <p>I believe it because it describes how I learned what I actually know about money: not from a
+          course, but from running things where being wrong cost me something real.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. THE CANVAS -->
+<section id="canvas">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-num">02 &mdash; The canvas</p>
+      <h2 class="serif">Nine boxes. Nine bets.</h2>
+      <p class="sec-sub">Each block is a category of bet, not a description. Every cell below looks
+        reasonable. Every cell could also be wrong &mdash; which is the entire point of section 03.</p>
+    </div>
+
+    <p class="canvas-note"><span class="dot"></span> First draft. This is a living document and it
+      updates every time an interview tells me something real.</p>
+
+    <div class="canvas-scroll">
+    <div class="canvas">
+
+      <div class="box kp">
+        <p class="bt">Key Partners</p>
+        <p class="bet-line">Who I bet will help me.</p>
+        <ul>
+          <li><b>Brokerage-as-a-service provider</b> (Alpaca, DriveWealth, Apex) &mdash; custody, fractional shares, KYC, the licence I do not have</li>
+          <li><b>FGCU Daveler &amp; Kauanui School</b> and campus business orgs &mdash; first cohort, free distribution</li>
+          <li><b>A securities attorney</b> &mdash; to confirm the introducing-app structure before launch, not after</li>
+          <li>Credit unions and first-job employers &mdash; later sponsorship of cohorts</li>
+        </ul>
+      </div>
+
+      <div class="box ka">
+        <p class="bt">Key Activities</p>
+        <p class="bet-line">What I bet I'll do.</p>
+        <ul>
+          <li>Run the weekly loop: one decision prompt, a written thesis, a trade window, a scored review</li>
+          <li>Write the weekly one-decision brief</li>
+          <li>Onboarding and KYC handoff to the broker partner</li>
+          <li>Recruit and retain campus cohorts</li>
+        </ul>
+      </div>
+
+      <div class="box kr">
+        <p class="bt">Key Resources</p>
+        <p class="bet-line">What I bet I'll need.</p>
+        <ul>
+          <li>An approved broker-partner integration</li>
+          <li><b>The thesis rubric</b> &mdash; how a decision gets scored on reasoning rather than return. This is the actual product</li>
+          <li>Access to FGCU students and student orgs</li>
+          <li>My own build stack &mdash; single-file web app, no engineering payroll</li>
+        </ul>
+      </div>
+
+      <div class="box vp">
+        <p class="bt">Value Propositions</p>
+        <p class="bet-line">What I bet they'll want.</p>
+        <p class="head-claim">You don't learn to invest by watching. You learn by putting $10 down and
+          writing why.</p>
+        <ul>
+          <li>One real decision a week, with real money, in amounts small enough that being wrong does not hurt</li>
+          <li>You must write a thesis before you can buy &mdash; and you are scored on the thinking, not the return</li>
+          <li class="neg">Not a course: a course removes the stakes</li>
+          <li class="neg">Not a robo-advisor: a robo-advisor removes the decision, which is the only part that teaches</li>
+        </ul>
+      </div>
+
+      <div class="box cr">
+        <p class="bt">Customer Relationships</p>
+        <p class="bet-line">How I bet I'll keep them.</p>
+        <ul>
+          <li>A weekly cohort of 20&ndash;30 students moving through the same decision together</li>
+          <li>A shared thesis feed inside the cohort &mdash; accountability without a leaderboard</li>
+          <li>A scored review after each decision: was the thesis right, and right for the right reason?</li>
+          <li class="neg">Deliberately no streaks and no rewards for trading more often</li>
+        </ul>
+      </div>
+
+      <div class="box ch">
+        <p class="bt">Channels</p>
+        <p class="bet-line">How I bet I'll reach them.</p>
+        <ul>
+          <li>Campus organisations &mdash; investment clubs, business fraternities, the D&amp;K School</li>
+          <li>Professor referrals in intro finance and entrepreneurship courses</li>
+          <li>Short-form video: real theses, real outcomes, small dollars</li>
+          <li>Cohort invites &mdash; each member brings two</li>
+        </ul>
+      </div>
+
+      <div class="box cs">
+        <p class="bt">Customer Segments</p>
+        <p class="bet-line">Who I bet will buy.</p>
+        <p class="head-claim">College students 18&ndash;24 with part-time income or a loan refund, who can
+          already explain what an index fund is and still have never funded a brokerage account.</p>
+        <ul>
+          <li><b>Marcus, 20</b>, FGCU junior, works 18 hrs/week, ~$600/month. Installed a trading app a year
+            ago. Has never put money in it.</li>
+          <li class="neg">Not high-schoolers &mdash; no income, so no stakes are possible</li>
+          <li class="neg">Not 35+ &mdash; a different pain entirely (consolidation, not initiation)</li>
+        </ul>
+      </div>
+
+      <div class="box cost">
+        <p class="bt">Cost Structure</p>
+        <p class="bet-line">What I bet it'll cost.</p>
+        <ul>
+          <li>Brokerage-as-a-service platform fee plus a per-funded-account cost</li>
+          <li>Legal review of the introducing-app structure, terms and disclosures &mdash; the largest pre-launch line</li>
+          <li>KYC and compliance pass-through per account</li>
+          <li>Paid acquisition tests at $20&ndash;50 a round</li>
+          <li>My time. No salaries while this is one person and one HTML file</li>
+        </ul>
+      </div>
+
+      <div class="box rev">
+        <p class="bt">Revenue Streams</p>
+        <p class="bet-line">How much I bet they'll pay.</p>
+        <ul>
+          <li><b>$5/month</b> student subscription, or $40/year</li>
+          <li>Institutional licence &mdash; a school or club buys a block of cohort seats</li>
+          <li>Later: employer or credit-union sponsorship of a cohort</li>
+          <li class="neg">Explicitly not payment for order flow, and nothing that pays me more when a
+            student trades more. That incentive would destroy the product</li>
+        </ul>
+      </div>
+
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. LEAP OF FAITH -->
+<section id="leap">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-num">03 &mdash; The one that matters</p>
+      <h2 class="serif">Leap of faith assumption</h2>
+      <p class="sec-sub">Of everything on this canvas, this is the bet that ends the business if it comes
+        back wrong. Not "makes it harder" &mdash; ends it.</p>
+    </div>
+
+    <div class="leap">
+      <p class="tag">Leap of faith</p>
+      <blockquote>We believe college students aged 18&ndash;24 with part-time income will link a real bank
+        account and fund at least $25 into a student-built investing app within seven days of signing up.</blockquote>
+      <div class="leap-grid">
+        <div>
+          <h4>Why it kills the business</h4>
+          <p>Everything here rests on the money being real. Stakes are the entire mechanism &mdash; the reason
+            Thesis is not just another free course. If students will only paper-trade, the stakes vanish,
+            the product collapses into content, and content is the thing that already exists for free and
+            already does not work.</p>
+        </div>
+        <div>
+          <h4>How I'd know within two weeks</h4>
+          <p>A smoke test. A landing page that explains the offer and asks for a $25 deposit at the end of
+            signup. Drive 300 students to it through campus orgs and $50 of ads. Measure the funding rate,
+            not the email rate. <b>Under 10% funded and the premise is wrong.</b> No product code gets
+            written before that number exists.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. KEY ASSUMPTIONS -->
+<section id="assumptions">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-num">04 &mdash; The rest of the bets</p>
+      <h2 class="serif">Key assumptions worth validating</h2>
+      <p class="sec-sub">Ordered by what I would test first: cheapest and most fatal at the top. Each one
+        is specific enough that I can picture the experiment that proves it wrong &mdash; if I couldn't,
+        it isn't on this list.</p>
+    </div>
+
+    <div class="a-list">
+
+      <div class="a">
+        <div class="a-top"><span class="a-n">01</span><span class="chip blk">Key Partners</span><span class="chip">Regulatory</span></div>
+        <p class="a-claim"><span class="wb">We believe</span> a student-founded app can operate on a
+          licensed partner's rails &mdash; taking deposits, placing fractional trades &mdash; without itself
+          registering as a broker-dealer or an investment adviser.</p>
+        <div class="a-rows">
+          <div>
+            <h5>How I test it</h5>
+            <p>One conversation with a securities attorney, plus the compliance packet from two
+              brokerage-as-a-service providers. A binary answer, available this week.
+              <span class="cost-tag">Cost: one consult &middot; Time: 1 week</span></p>
+          </div>
+          <div>
+            <h5>What would disprove it</h5>
+            <p>Any structure that requires my own registration, or a partner minimum a pre-revenue student
+              cannot meet.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="a">
+        <div class="a-top"><span class="a-n">02</span><span class="chip blk">Value Propositions</span></div>
+        <p class="a-claim"><span class="wb">We believe</span> the binding constraint is stakes, not
+          information &mdash; that students who can already explain an index fund have still never funded a
+          brokerage account.</p>
+        <div class="a-rows">
+          <div>
+            <h5>How I test it</h5>
+            <p>15 interviews. Ask two separate things: what they can explain, and what they have actually
+              done. Don't pitch. Listen.
+              <span class="cost-tag">Cost: $0 &middot; Time: this week</span></p>
+          </div>
+          <div>
+            <h5>What would disprove it</h5>
+            <p>If most students who haven't invested also can't explain the basics, the problem is
+              information after all &mdash; and the insight this venture is built on is wrong.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="a">
+        <div class="a-top"><span class="a-n">03</span><span class="chip blk">Revenue Streams</span></div>
+        <p class="a-claim"><span class="wb">We believe</span> a student who will fund $25 will also pay
+          $5 a month for the weekly decision loop, rather than only using a free tier.</p>
+        <div class="a-rows">
+          <div>
+            <h5>How I test it</h5>
+            <p>Put a real checkout on the smoke-test page. Charge before anything is built, refund everyone
+              afterwards. Count cards, not clicks.
+              <span class="cost-tag">Cost: payment fees &middot; Time: 1 week</span></p>
+          </div>
+          <div>
+            <h5>What would disprove it</h5>
+            <p>Fewer than 5% of funded signups reaching for a card. That pushes the model toward
+              institutional licensing and rewrites the revenue block.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="a">
+        <div class="a-top"><span class="a-n">04</span><span class="chip blk">Value Propositions</span><span class="chip">Mechanism</span></div>
+        <p class="a-claim"><span class="wb">We believe</span> forcing a written thesis before a student can
+          buy raises 30-day retention rather than causing them to abandon signup.</p>
+        <div class="a-rows">
+          <div>
+            <h5>How I test it</h5>
+            <p>Two onboarding flows run side by side in a concierge cohort: thesis required versus one-tap
+              buy. Same prompt, same week, 20 students each.
+              <span class="cost-tag">Cost: my time &middot; Time: 4 weeks</span></p>
+          </div>
+          <div>
+            <h5>What would disprove it</h5>
+            <p>The thesis group dropping off faster. The friction I am selling would be friction they
+              won't accept, and the mechanism needs to get lighter.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="a">
+        <div class="a-top"><span class="a-n">05</span><span class="chip blk">Channels</span></div>
+        <p class="a-claim"><span class="wb">We believe</span> campus organisations will distribute this to
+          their members for free, because running it makes the organisation look useful to its own members.</p>
+        <div class="a-rows">
+          <div>
+            <h5>How I test it</h5>
+            <p>Pitch five student-org presidents at FGCU. Count how many agree to email their list or run
+              one session. Ask for the commitment inside the meeting.
+              <span class="cost-tag">Cost: $0 &middot; Time: 2 weeks</span></p>
+          </div>
+          <div>
+            <h5>What would disprove it</h5>
+            <p>Fewer than two of five saying yes. Free campus distribution is what makes $5/month work;
+              without it, paid acquisition has to carry the whole model.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="a">
+        <div class="a-top"><span class="a-n">06</span><span class="chip blk">Customer Segments</span></div>
+        <p class="a-claim"><span class="wb">We believe</span> students 18&ndash;24 with a first part-time
+          income feel the "I should be investing and I'm not" pressure sharply enough to act on it &mdash;
+          more sharply than high-schoolers or adults over 30.</p>
+        <div class="a-rows">
+          <div>
+            <h5>How I test it</h5>
+            <p>Five interviews in each of three age bands, identical questions. Count how many describe the
+              gap unprompted, before I name it for them.
+              <span class="cost-tag">Cost: $0 &middot; Time: this week</span></p>
+          </div>
+          <div>
+            <h5>What would disprove it</h5>
+            <p>The pressure showing up strongest in a different band. That is a segment change rather than a
+              failure &mdash; but channels, price and persona all move with it.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="a">
+        <div class="a-top"><span class="a-n">07</span><span class="chip blk">Customer Relationships</span></div>
+        <p class="a-claim"><span class="wb">We believe</span> a weekly cohort of 20&ndash;30 students retains
+          better than the same product used alone.</p>
+        <div class="a-rows">
+          <div>
+            <h5>How I test it</h5>
+            <p>Concierge it. Run a cohort manually for four weeks with a group chat and a spreadsheet
+              &mdash; no product at all, just me. Track how many still post a thesis in week four.
+              <span class="cost-tag">Cost: my time &middot; Time: 4 weeks</span></p>
+          </div>
+          <div>
+            <h5>What would disprove it</h5>
+            <p>Week-four participation under 40%. Cohorts are expensive to run; if they don't hold people,
+              the relationships block is wrong.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="a">
+        <div class="a-top"><span class="a-n">08</span><span class="chip blk">Cost Structure</span></div>
+        <p class="a-claim"><span class="wb">We believe</span> a funded student can be acquired for under
+          $15 through campus organisations and short-form video.</p>
+        <div class="a-rows">
+          <div>
+            <h5>How I test it</h5>
+            <p>$50 of ads to the smoke-test page. Divide spend by funded accounts, not by email signups.
+              <span class="cost-tag">Cost: $50 &middot; Time: 3 days</span></p>
+          </div>
+          <div>
+            <h5>What would disprove it</h5>
+            <p>Cost per funded account above $15 against $60 of annual revenue. Payback stretches past a
+              student's remaining time on campus, and the institutional licence becomes the only model.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 5. TEST LADDER -->
+<section id="ladder">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-num">05 &mdash; Order of operations</p>
+      <h2 class="serif">What I'd actually do, in order</h2>
+      <p class="sec-sub">Move down a rung only when the one above gives a strong signal. Everything above
+        rung five costs less than a tank of gas.</p>
+    </div>
+
+    <div class="ladder">
+      <div class="rung now">
+        <div class="r-n">1</div>
+        <div>
+          <h4>Conversation &mdash; this week</h4>
+          <p>15 interviews with FGCU students who have income. Tests assumptions 02 and 06, and it is the
+            only rung that can tell me the root cause itself is wrong. Don't pitch. Listen.</p>
+        </div>
+        <div class="r-cost"><b>$0</b>this week</div>
+      </div>
+      <div class="rung now">
+        <div class="r-n">2</div>
+        <div>
+          <h4>Landing page and deposit smoke test</h4>
+          <p>One page explaining the offer, ending in a $25 deposit step and a $5/month checkout. This is
+            the leap-of-faith test, and it settles assumptions 03 and 08 in the same run.</p>
+        </div>
+        <div class="r-cost"><b>$20&ndash;50 ads</b>3 days</div>
+      </div>
+      <div class="rung">
+        <div class="r-n">3</div>
+        <div>
+          <h4>Concierge cohort</h4>
+          <p>Run four weeks by hand for 20 students &mdash; group chat, spreadsheet, me writing the weekly
+            brief myself. No product. Tests assumptions 04 and 07.</p>
+        </div>
+        <div class="r-cost"><b>My time</b>4 weeks</div>
+      </div>
+      <div class="rung">
+        <div class="r-n">4</div>
+        <div>
+          <h4>Legal and partner confirmation</h4>
+          <p>Runs in parallel from day one, because it is binary and it gates everything downstream
+            (assumption 01). There is no point building on rails I cannot legally use.</p>
+        </div>
+        <div class="r-cost"><b>One consult</b>1 week</div>
+      </div>
+      <div class="rung">
+        <div class="r-n">5</div>
+        <div>
+          <h4>MVP</h4>
+          <p>The smallest thing that delivers the loop: prompt, thesis, funded trade, scored review.
+            Only after every rung above has come back green.</p>
+        </div>
+        <div class="r-cost"><b>Weeks of work</b>expensive</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. NEXT -->
+<section id="next" style="border-bottom:none">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-num">06 &mdash; Next</p>
+      <h2 class="serif">What has to happen before the next class</h2>
+    </div>
+    <div class="next">
+      <div class="card">
+        <h3>Book ten interviews</h3>
+        <p>Students with part-time income. The two questions that matter: what can you explain, and what
+          have you actually done. The gap between those two answers is the whole business.</p>
+      </div>
+      <div class="card">
+        <h3>Build the smoke-test page</h3>
+        <p>Single page, deposit step, checkout. It doubles as the Module 3 landing page assignment, so it
+          gets built either way.</p>
+      </div>
+      <div class="card">
+        <h3>Email two BaaS providers</h3>
+        <p>Three questions: minimum account size, whether they onboard student-founded apps, and what
+          registration they expect from me. Slowest thread, so start it first.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Thesis is a first-draft business model canvas, not a company. Every figure on this page is an
+      assumption I intend to test, and several of them are probably wrong &mdash; which is the point of
+      writing them down somewhere they can be checked.</p>
+    <p>Nothing on this page is investment advice.</p>
+    <p style="margin-top:20px;color:#4a5361">Kevin Cockman &middot; ENT 3114 New Venture Laboratory &middot;
+      Daveler &amp; Kauanui School of Entrepreneurship &middot; Florida Gulf Coast University &middot; August 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>
