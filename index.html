@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Thesis — Business Model Canvas &amp; Key Assumptions</title>
-<meta name="description" content="BMC and key assumptions for Thesis. ENT 3114 New Venture Laboratory, FGCU.">
+<title>PeptideChecker — Business Model Canvas &amp; Key Assumptions</title>
+<meta name="description" content="BMC and key assumptions for PeptideChecker. ENT 3114 New Venture Laboratory, FGCU.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -32,14 +32,18 @@
   }
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
   .serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400;letter-spacing:.01em}
+  a{color:var(--live)}
 
   /* ---------- header ---------- */
   header{border-bottom:1px solid var(--line);padding:56px 0 44px;background:
     radial-gradient(900px 320px at 12% -40%, rgba(224,169,68,.10), transparent 70%);}
   .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin:0 0 20px}
-  h1.title{font-size:clamp(44px,7vw,84px);line-height:1;margin:0 0 18px}
-  .lede{max-width:60ch;color:var(--muted);font-size:18px;margin:0 0 28px}
+  h1.title{font-size:clamp(40px,6.4vw,78px);line-height:1;margin:0 0 18px}
+  .lede{max-width:62ch;color:var(--muted);font-size:18px;margin:0 0 22px}
   .lede b{color:var(--text);font-weight:600}
+  .livebar{display:inline-flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);
+    background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:8px 16px;margin:0 0 28px}
+  .livebar .pulse{width:7px;height:7px;border-radius:50%;background:var(--live)}
   .meta{display:flex;flex-wrap:wrap;gap:8px 28px;font-size:13px;color:var(--dim);
         border-top:1px solid var(--line);padding-top:20px}
   .meta span b{color:var(--muted);font-weight:500}
@@ -57,7 +61,7 @@
     border-radius:4px;padding:28px 30px;margin:0 0 24px;
   }
   .statement .label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin:0 0 12px}
-  .statement p{margin:0;font-size:clamp(19px,2.4vw,25px);line-height:1.45}
+  .statement p{margin:0;font-size:clamp(18px,2.3vw,24px);line-height:1.45}
   .statement em{color:var(--bet);font-style:normal}
   .pair{display:grid;grid-template-columns:1fr 1fr;gap:18px}
   .card{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:24px 26px}
@@ -65,6 +69,13 @@
   .card p{margin:0 0 12px;color:var(--muted)}
   .card p:last-child{margin-bottom:0}
   .card p b{color:var(--text);font-weight:600}
+
+  /* ---------- gates ---------- */
+  .gates{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}
+  .gate{background:var(--panel-2);border:1px solid var(--line);border-radius:4px;padding:18px 20px}
+  .gate .g-n{font-family:"Instrument Serif",Georgia,serif;font-size:26px;color:var(--bet);line-height:1;margin:0 0 8px}
+  .gate p{margin:0;font-size:13.5px;color:var(--muted)}
+  .gate b{color:var(--text);font-weight:600;display:block;margin-bottom:4px;font-size:14px}
 
   /* ---------- canvas ---------- */
   .canvas-note{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
@@ -103,7 +114,7 @@
   }
   .leap .tag{display:inline-block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
     color:var(--ink);background:var(--bet);padding:5px 10px;border-radius:3px;font-weight:700;margin:0 0 20px}
-  .leap blockquote{margin:0 0 26px;font-size:clamp(20px,2.8vw,29px);line-height:1.4;
+  .leap blockquote{margin:0 0 26px;font-size:clamp(19px,2.6vw,28px);line-height:1.4;
     font-family:"Instrument Serif",Georgia,serif}
   .leap-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;border-top:1px solid var(--bet-dim);padding-top:24px}
   .leap-grid h4{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--bet);margin:0 0 10px;font-weight:700}
@@ -148,6 +159,7 @@
 
   @media (max-width:860px){
     .pair,.leap-grid,.a-rows,.next{grid-template-columns:1fr}
+    .gates{grid-template-columns:1fr 1fr}
     .rung{grid-template-columns:40px 1fr;gap:14px}
     .rung .r-cost{grid-column:2;text-align:left;margin-top:6px}
     section{padding:48px 0}
@@ -160,10 +172,13 @@
 <header>
   <div class="wrap">
     <p class="eyebrow">ENT 3114 &middot; New Venture Laboratory &middot; Module 3</p>
-    <h1 class="title serif">Thesis</h1>
-    <p class="lede">Nine boxes. Nine bets. A first-draft Business Model Canvas for a venture that
-      teaches young adults to invest by making them <b>put real money down and write why</b> &mdash; and the
-      list of assumptions underneath it that could each be wrong.</p>
+    <h1 class="title serif">PeptideChecker</h1>
+    <p class="lede">Nine boxes. Nine bets. A Business Model Canvas for a venture that does not sell
+      peptides, does not run a laboratory, and earns nothing unless it is
+      <b>willing to publicly delist the vendors that pay it</b> &mdash; plus the assumptions underneath
+      it that could each be wrong.</p>
+    <p class="livebar"><span class="pulse"></span> The site is already live &mdash;
+      <a href="https://cockmankevin-design.github.io/peptidechecker/" target="_blank" rel="noopener">cockmankevin-design.github.io/peptidechecker</a></p>
     <div class="meta">
       <span><b>Kevin Cockman</b></span>
       <span>BMC &amp; Key Assumptions Assignment</span>
@@ -185,26 +200,52 @@
 
     <div class="statement">
       <p class="label">Problem statement</p>
-      <p>Young adults with their first real income never start investing <em>not because</em> they lack
-        access to financial information, <em>but because</em> every resource available to them teaches
-        without stakes &mdash; and nothing about money sticks until a decision has a consequence you feel.</p>
+      <p>People buying research peptides online cannot tell which vendors are real <em>not because</em>
+        the lab data is missing, <em>but because</em> every vendor publishes a certificate of analysis and
+        almost none of them can be traced to a specific lot &mdash; so the one document buyers were taught
+        to trust has become the cheapest thing in the market to fake.</p>
     </div>
 
     <div class="pair">
       <div class="card">
         <h3>Root cause</h3>
-        <p>Financial education is delivered as <b>content</b>. Content without consequence does not change
-          behavior. A student can watch forty hours of investing videos, pass a quiz, and still have a
-          brokerage app on their phone they have never funded.</p>
-        <p>The gap is not knowledge. It is the absence of a first decision that costs something.</p>
+        <p>The COA stopped being a verification artifact and became a <b>marketing asset</b>. Nothing stops
+          a vendor from publishing one. No standard says what it has to contain. No third party checks
+          whether the document describes what is actually in the bottle.</p>
+        <p>A signal that costs nothing to produce carries no information. Buyers are not short of
+          evidence &mdash; they are drowning in evidence that cannot be checked.</p>
       </div>
       <div class="card">
         <h3>My unique insight (and why I believe it)</h3>
-        <p>The people who need this most are not uninformed. <b>They can already explain what an index
-          fund is and still have never opened an account.</b> That single observation kills the
-          "more education" solution that almost everyone else builds.</p>
-        <p>I believe it because it describes how I learned what I actually know about money: not from a
-          course, but from running things where being wrong cost me something real.</p>
+        <p>The gap is unverifiable evidence, not missing evidence &mdash; and that changes what the fix has
+          to be. <b>It does not require a laboratory.</b> It requires one consistent, published test
+          applied to documents that are already public, and the willingness to refuse to list whoever
+          fails.</p>
+        <p>I believe it because I went and read them. Vendor after vendor publishes a PDF with a lab logo
+          and no lot number, or reuses one generic report across every product they sell. Nobody applies
+          the test because everyone else in this market earns money from listings, and an exclusion is the
+          one thing a listing business cannot afford.</p>
+      </div>
+    </div>
+
+    <div class="gates">
+      <div class="gate">
+        <p class="g-n">1</p>
+        <p><b>It exists and it loads</b>A link that 404s, or a COA available only on request, is a fail.</p>
+      </div>
+      <div class="gate">
+        <p class="g-n">2</p>
+        <p><b>It names the lab</b>An unattributed result is an assertion with a chart on it.</p>
+      </div>
+      <div class="gate">
+        <p class="g-n">3</p>
+        <p><b>It names a specific lot</b>One generic PDF reused across a whole catalogue proves nothing
+          about the vial you receive.</p>
+      </div>
+      <div class="gate">
+        <p class="g-n">4</p>
+        <p><b>It matches the product page</b>The compound, the strength and the date have to agree with
+          what is being sold.</p>
       </div>
     </div>
   </div>
@@ -221,7 +262,7 @@
     </div>
 
     <p class="canvas-note"><span class="dot"></span> First draft. This is a living document and it
-      updates every time an interview tells me something real.</p>
+      updates every time an interview or an audit tells me something real.</p>
 
     <div class="canvas-scroll">
     <div class="canvas">
@@ -230,10 +271,12 @@
         <p class="bt">Key Partners</p>
         <p class="bet-line">Who I bet will help me.</p>
         <ul>
-          <li><b>Brokerage-as-a-service provider</b> (Alpaca, DriveWealth, Apex) &mdash; custody, fractional shares, KYC, the licence I do not have</li>
-          <li><b>FGCU Daveler &amp; Kauanui School</b> and campus business orgs &mdash; first cohort, free distribution</li>
-          <li><b>A securities attorney</b> &mdash; to confirm the introducing-app structure before launch, not after</li>
-          <li>Credit unions and first-job employers &mdash; later sponsorship of cohorts</li>
+          <li><b>Vendor affiliate programmes</b> &mdash; the only revenue source, and the supplier of real
+            product feeds: images, prices, stock and tracking links</li>
+          <li><b>Third-party analytical labs</b> (Janoshik, Colmaric, MZ Biolabs) &mdash; as the authors of
+            the reports we read, not as anyone we hire</li>
+          <li><b>Cloudflare</b> &mdash; Workers and KV run the subscriber list on infrastructure I own</li>
+          <li>Moderators of the research communities where buyers already ask "who is real?"</li>
         </ul>
       </div>
 
@@ -241,10 +284,11 @@
         <p class="bt">Key Activities</p>
         <p class="bet-line">What I bet I'll do.</p>
         <ul>
-          <li>Run the weekly loop: one decision prompt, a written thesis, a trade window, a scored review</li>
-          <li>Write the weekly one-decision brief</li>
-          <li>Onboarding and KYC handoff to the broker partner</li>
-          <li>Recruit and retain campus cohorts</li>
+          <li>Run the <b>four-gate COA check</b> on every listing, and re-run it when a lot changes</li>
+          <li>Score, re-score, and publicly delist anyone who drops below 7</li>
+          <li>Publish the methodology and every score change</li>
+          <li>Keep the catalogue current from vendor product feeds rather than by hand</li>
+          <li>Write the buyer-education content that earns the search traffic</li>
         </ul>
       </div>
 
@@ -252,23 +296,26 @@
         <p class="bt">Key Resources</p>
         <p class="bet-line">What I bet I'll need.</p>
         <ul>
-          <li>An approved broker-partner integration</li>
-          <li><b>The thesis rubric</b> &mdash; how a decision gets scored on reasoning rather than return. This is the actual product</li>
-          <li>Access to FGCU students and student orgs</li>
-          <li>My own build stack &mdash; single-file web app, no engineering payroll</li>
+          <li><b>The published scoring rubric</b> &mdash; purity 40%, COA transparency 20%, consistency 20%,
+            price 10%, shipping 10%. This is the actual product</li>
+          <li>Acceptance into affiliate programmes, which gates real prices, images and links</li>
+          <li>The live site and the subscriber list, both on infrastructure I own outright</li>
+          <li>My own build stack &mdash; static export, free hosting, no engineering payroll</li>
         </ul>
       </div>
 
       <div class="box vp">
         <p class="bt">Value Propositions</p>
         <p class="bet-line">What I bet they'll want.</p>
-        <p class="head-claim">You don't learn to invest by watching. You learn by putting $10 down and
-          writing why.</p>
+        <p class="head-claim">Every vendor publishes a COA. Almost none of them will show you the lot.
+          We check, and we publish who fails.</p>
         <ul>
-          <li>One real decision a week, with real money, in amounts small enough that being wrong does not hurt</li>
-          <li>You must write a thesis before you can buy &mdash; and you are scored on the thinking, not the return</li>
-          <li class="neg">Not a course: a course removes the stakes</li>
-          <li class="neg">Not a robo-advisor: a robo-advisor removes the decision, which is the only part that teaches</li>
+          <li>A list where the entry requirement is traceable evidence, not an advertising budget</li>
+          <li><b>Below 7 out of 10 is not listed.</b> No paid placement, no sponsored tier</li>
+          <li>Safety before price before shipping, in that order, on every page, no exceptions</li>
+          <li class="neg">We run no laboratory and commission no testing &mdash; we verify evidence that
+            already exists, and we say exactly how</li>
+          <li class="neg">Not a vendor: no inventory, no shipping, we never touch product</li>
         </ul>
       </div>
 
@@ -276,10 +323,12 @@
         <p class="bt">Customer Relationships</p>
         <p class="bet-line">How I bet I'll keep them.</p>
         <ul>
-          <li>A weekly cohort of 20&ndash;30 students moving through the same decision together</li>
-          <li>A shared thesis feed inside the cohort &mdash; accountability without a leaderboard</li>
-          <li>A scored review after each decision: was the thesis right, and right for the right reason?</li>
-          <li class="neg">Deliberately no streaks and no rewards for trading more often</li>
+          <li>A methodology page anyone can audit, and a changelog whenever a score moves</li>
+          <li>An email list that exists to announce delistings and new verifications</li>
+          <li>Answering hard questions in public in the communities &mdash; including about our own
+            affiliate revenue</li>
+          <li class="neg">No urgency timers, no invented review counts, no fabricated scarcity. Those
+            convert, and they are the exact thing this site exists to argue against</li>
         </ul>
       </div>
 
@@ -287,23 +336,24 @@
         <p class="bt">Channels</p>
         <p class="bet-line">How I bet I'll reach them.</p>
         <ul>
-          <li>Campus organisations &mdash; investment clubs, business fraternities, the D&amp;K School</li>
-          <li>Professor referrals in intro finance and entrepreneurship courses</li>
-          <li>Short-form video: real theses, real outcomes, small dollars</li>
-          <li>Cohort invites &mdash; each member brings two</li>
+          <li>Organic search on high-intent queries: "is [vendor] legit", "[peptide] COA"</li>
+          <li>Reddit and forum threads where the question is already being asked</li>
+          <li>The email list at the moment of a delisting &mdash; the most shareable thing we produce</li>
+          <li>Later: short-form video teaching people to read a COA themselves</li>
         </ul>
       </div>
 
       <div class="box cs">
         <p class="bt">Customer Segments</p>
         <p class="bet-line">Who I bet will buy.</p>
-        <p class="head-claim">College students 18&ndash;24 with part-time income or a loan refund, who can
-          already explain what an index fund is and still have never funded a brokerage account.</p>
+        <p class="head-claim">Adults 25&ndash;45 already buying research peptides online who have been
+          burned once, or are one bad order away from it. They read COAs, they don't trust them, and they
+          resolve it today by asking strangers on Reddit.</p>
         <ul>
-          <li><b>Marcus, 20</b>, FGCU junior, works 18 hrs/week, ~$600/month. Installed a trading app a year
-            ago. Has never put money in it.</li>
-          <li class="neg">Not high-schoolers &mdash; no income, so no stakes are possible</li>
-          <li class="neg">Not 35+ &mdash; a different pain entirely (consolidation, not initiation)</li>
+          <li><b>Dan, 34.</b> Third order, two vendors. One arrived with a COA whose lot number matched
+            nothing. Spends forty minutes cross-checking every purchase and still isn't sure</li>
+          <li class="neg">Not clinicians or patients &mdash; a different regulatory universe entirely</li>
+          <li class="neg">Not first-time browsers &mdash; they have not felt the pain yet</li>
         </ul>
       </div>
 
@@ -311,11 +361,12 @@
         <p class="bt">Cost Structure</p>
         <p class="bet-line">What I bet it'll cost.</p>
         <ul>
-          <li>Brokerage-as-a-service platform fee plus a per-funded-account cost</li>
-          <li>Legal review of the introducing-app structure, terms and disclosures &mdash; the largest pre-launch line</li>
-          <li>KYC and compliance pass-through per account</li>
-          <li>Paid acquisition tests at $20&ndash;50 a round</li>
-          <li>My time. No salaries while this is one person and one HTML file</li>
+          <li>Hosting near zero &mdash; static export on GitHub Pages, Cloudflare Workers and KV free tier</li>
+          <li><b>My time running the gate check and re-scoring</b> &mdash; the real recurring cost, and the
+            one that scales with every listing added</li>
+          <li>Content production for search</li>
+          <li>Legal review of the disclaimers and the research-use-only positioning</li>
+          <li class="neg">No inventory, no shipping, no lab invoices &mdash; deliberately</li>
         </ul>
       </div>
 
@@ -323,11 +374,11 @@
         <p class="bt">Revenue Streams</p>
         <p class="bet-line">How much I bet they'll pay.</p>
         <ul>
-          <li><b>$5/month</b> student subscription, or $40/year</li>
-          <li>Institutional licence &mdash; a school or club buys a block of cohort seats</li>
-          <li>Later: employer or credit-union sponsorship of a cohort</li>
-          <li class="neg">Explicitly not payment for order flow, and nothing that pays me more when a
-            student trades more. That incentive would destroy the product</li>
+          <li><b>Affiliate commission</b> on referrals, to verified vendors only</li>
+          <li>Later: clearly marked educational sponsorship that never touches a score</li>
+          <li>Buyers pay nothing, ever &mdash; a paywall on safety information defeats the purpose</li>
+          <li class="neg">Never pay-to-list and never pay-to-rank. Commission cannot move a score, and
+            the methodology page has to say so in those words</li>
         </ul>
       </div>
 
@@ -348,22 +399,25 @@
 
     <div class="leap">
       <p class="tag">Leap of faith</p>
-      <blockquote>We believe college students aged 18&ndash;24 with part-time income will link a real bank
-        account and fund at least $25 into a student-built investing app within seven days of signing up.</blockquote>
+      <blockquote>We believe at least eight of the thirty largest online peptide vendors will both pass
+        all four COA gates <i>and</i> run an affiliate programme that accepts a publisher which
+        publicly delists vendors.</blockquote>
       <div class="leap-grid">
         <div>
           <h4>Why it kills the business</h4>
-          <p>Everything here rests on the money being real. Stakes are the entire mechanism &mdash; the reason
-            Thesis is not just another free course. If students will only paper-trade, the stakes vanish,
-            the product collapses into content, and content is the thing that already exists for free and
-            already does not work.</p>
+          <p>The venture only exists in the overlap. A vendor that passes the gates but runs no affiliate
+            programme earns nothing. A vendor with a generous programme that fails the gates cannot be
+            listed, because the 7-point floor is the product. <b>If that overlap is close to empty, there
+            is either nothing worth visiting or no way to earn from it</b> &mdash; and no amount of better
+            design or content fixes either one.</p>
         </div>
         <div>
           <h4>How I'd know within two weeks</h4>
-          <p>A smoke test. A landing page that explains the offer and asks for a $25 deposit at the end of
-            signup. Drive 300 students to it through campus orgs and $50 of ads. Measure the funding rate,
-            not the email rate. <b>Under 10% funded and the premise is wrong.</b> No product code gets
-            written before that number exists.</p>
+          <p>A spreadsheet, not a product. Thirty vendors, four gates each, scored from their own public
+            pages, plus a column for whether an affiliate programme exists and what its terms say about
+            negative coverage. Then apply to five of them and state plainly in the application what the
+            site does. <b>Fewer than eight in the overlap and the model has to change, not the copy.</b>
+            Cost: two weeks and no money.</p>
         </div>
       </div>
     </div>
@@ -384,155 +438,158 @@
     <div class="a-list">
 
       <div class="a">
-        <div class="a-top"><span class="a-n">01</span><span class="chip blk">Key Partners</span><span class="chip">Regulatory</span></div>
-        <p class="a-claim"><span class="wb">We believe</span> a student-founded app can operate on a
-          licensed partner's rails &mdash; taking deposits, placing fractional trades &mdash; without itself
-          registering as a broker-dealer or an investment adviser.</p>
+        <div class="a-top"><span class="a-n">01</span><span class="chip blk">Key Partners</span><span class="chip">Supply</span></div>
+        <p class="a-claim"><span class="wb">We believe</span> somewhere between a fifth and half of the
+          thirty largest vendors pass all four gates &mdash; enough to build a catalogue, few enough that
+          passing means something.</p>
         <div class="a-rows">
           <div>
             <h5>How I test it</h5>
-            <p>One conversation with a securities attorney, plus the compliance packet from two
-              brokerage-as-a-service providers. A binary answer, available this week.
-              <span class="cost-tag">Cost: one consult &middot; Time: 1 week</span></p>
+            <p>The desk audit. Thirty vendors, four gates, recorded from their own public product pages.
+              No contact with anyone required.
+              <span class="cost-tag">Cost: $0 &middot; Time: 2 weeks</span></p>
           </div>
           <div>
             <h5>What would disprove it</h5>
-            <p>Any structure that requires my own registration, or a partner minimum a pre-revenue student
-              cannot meet.</p>
+            <p>Fewer than five passing leaves the 7-point floor with an empty site. More than twenty-five
+              passing means the gates aren't discriminating and the score carries no signal. <b>Both ends
+              are failures.</b></p>
           </div>
         </div>
       </div>
 
       <div class="a">
-        <div class="a-top"><span class="a-n">02</span><span class="chip blk">Value Propositions</span></div>
-        <p class="a-claim"><span class="wb">We believe</span> the binding constraint is stakes, not
-          information &mdash; that students who can already explain an index fund have still never funded a
-          brokerage account.</p>
+        <div class="a-top"><span class="a-n">02</span><span class="chip blk">Revenue Streams</span><span class="chip">Model risk</span></div>
+        <p class="a-claim"><span class="wb">We believe</span> affiliate programmes will accept and keep a
+          publisher that publicly delists vendors, including vendors inside the same programme.</p>
         <div class="a-rows">
           <div>
             <h5>How I test it</h5>
-            <p>15 interviews. Ask two separate things: what they can explain, and what they have actually
-              done. Don't pitch. Listen.
+            <p>Apply to five programmes and describe the delisting policy in the application itself, not
+              after acceptance. Then read the terms for a clause that allows removal over negative coverage.
+              <span class="cost-tag">Cost: $0 &middot; Time: 2 weeks</span></p>
+          </div>
+          <div>
+            <h5>What would disprove it</h5>
+            <p>Fewer than two acceptances, or terms that forbid negative coverage. Affiliate revenue would
+              then be structurally incompatible with the one thing the site sells.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="a">
+        <div class="a-top"><span class="a-n">03</span><span class="chip blk">Value Propositions</span></div>
+        <p class="a-claim"><span class="wb">We believe</span> buyers already distrust vendor-published
+          COAs and are doing this verification by hand today &mdash; badly, and without knowing what to
+          look for.</p>
+        <div class="a-rows">
+          <div>
+            <h5>How I test it</h5>
+            <p>15 interviews with people who have bought, plus reading 50 recent "is this vendor legit"
+              threads. Count how many raise COAs or lot numbers before I mention either.
               <span class="cost-tag">Cost: $0 &middot; Time: this week</span></p>
           </div>
           <div>
             <h5>What would disprove it</h5>
-            <p>If most students who haven't invested also can't explain the basics, the problem is
-              information after all &mdash; and the insight this venture is built on is wrong.</p>
+            <p>Buyers choosing on price and shipping speed alone. The insight would be mine and not
+              theirs, and the site would be answering a question nobody is asking.</p>
           </div>
         </div>
       </div>
 
       <div class="a">
-        <div class="a-top"><span class="a-n">03</span><span class="chip blk">Revenue Streams</span></div>
-        <p class="a-claim"><span class="wb">We believe</span> a student who will fund $25 will also pay
-          $5 a month for the weekly decision loop, rather than only using a free tier.</p>
+        <div class="a-top"><span class="a-n">04</span><span class="chip blk">Customer Relationships</span><span class="chip">Independence</span></div>
+        <p class="a-claim"><span class="wb">We believe</span> buyers will still trust the scores after
+          reading, on the methodology page, that we earn commission from the vendors we score.</p>
         <div class="a-rows">
           <div>
             <h5>How I test it</h5>
-            <p>Put a real checkout on the smoke-test page. Charge before anything is built, refund everyone
-              afterwards. Count cards, not clicks.
-              <span class="cost-tag">Cost: payment fees &middot; Time: 1 week</span></p>
+            <p>Show two versions of the methodology page to twenty people in the target group, disclosure
+              prominent and disclosure buried, and compare stated intent to click through. Then post the
+              prominent version to one community and read what comes back.
+              <span class="cost-tag">Cost: $0 &middot; Time: 1 week</span></p>
           </div>
           <div>
             <h5>What would disprove it</h5>
-            <p>Fewer than 5% of funded signups reaching for a card. That pushes the model toward
-              institutional licensing and rewrites the revenue block.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="a">
-        <div class="a-top"><span class="a-n">04</span><span class="chip blk">Value Propositions</span><span class="chip">Mechanism</span></div>
-        <p class="a-claim"><span class="wb">We believe</span> forcing a written thesis before a student can
-          buy raises 30-day retention rather than causing them to abandon signup.</p>
-        <div class="a-rows">
-          <div>
-            <h5>How I test it</h5>
-            <p>Two onboarding flows run side by side in a concierge cohort: thesis required versus one-tap
-              buy. Same prompt, same week, 20 students each.
-              <span class="cost-tag">Cost: my time &middot; Time: 4 weeks</span></p>
-          </div>
-          <div>
-            <h5>What would disprove it</h5>
-            <p>The thesis group dropping off faster. The friction I am selling would be friction they
-              won't accept, and the mechanism needs to get lighter.</p>
+            <p>The disclosure materially cutting intent. That is a revenue-model problem, not a wording
+              problem, and burying it is not an option &mdash; independence is the entire product.</p>
           </div>
         </div>
       </div>
 
       <div class="a">
         <div class="a-top"><span class="a-n">05</span><span class="chip blk">Channels</span></div>
-        <p class="a-claim"><span class="wb">We believe</span> campus organisations will distribute this to
-          their members for free, because running it makes the organisation look useful to its own members.</p>
+        <p class="a-claim"><span class="wb">We believe</span> high-intent search queries carry enough
+          monthly volume to make organic search the primary channel, rather than paid acquisition.</p>
         <div class="a-rows">
           <div>
             <h5>How I test it</h5>
-            <p>Pitch five student-org presidents at FGCU. Count how many agree to email their list or run
-              one session. Ask for the commitment inside the meeting.
-              <span class="cost-tag">Cost: $0 &middot; Time: 2 weeks</span></p>
+            <p>Keyword research, then publish three pages written against the exact queries and watch
+              impressions in Search Console for thirty days.
+              <span class="cost-tag">Cost: $0 &middot; Time: 30 days</span></p>
           </div>
           <div>
             <h5>What would disprove it</h5>
-            <p>Fewer than two of five saying yes. Free campus distribution is what makes $5/month work;
-              without it, paid acquisition has to carry the whole model.</p>
+            <p>A few hundred impressions a month. Search would not be the channel, and this becomes a
+              community-led venture with a very different cost structure.</p>
           </div>
         </div>
       </div>
 
       <div class="a">
         <div class="a-top"><span class="a-n">06</span><span class="chip blk">Customer Segments</span></div>
-        <p class="a-claim"><span class="wb">We believe</span> students 18&ndash;24 with a first part-time
-          income feel the "I should be investing and I'm not" pressure sharply enough to act on it &mdash;
-          more sharply than high-schoolers or adults over 30.</p>
+        <p class="a-claim"><span class="wb">We believe</span> the buyer worth serving is the one who has
+          already been burned or nearly burned &mdash; not the first-time curious browser.</p>
         <div class="a-rows">
           <div>
             <h5>How I test it</h5>
-            <p>Five interviews in each of three age bands, identical questions. Count how many describe the
-              gap unprompted, before I name it for them.
+            <p>In the same fifteen interviews, split by purchase history and compare how urgently each
+              group describes the problem without prompting.
               <span class="cost-tag">Cost: $0 &middot; Time: this week</span></p>
           </div>
           <div>
             <h5>What would disprove it</h5>
-            <p>The pressure showing up strongest in a different band. That is a segment change rather than a
-              failure &mdash; but channels, price and persona all move with it.</p>
+            <p>Repeat buyers already having a vendor they trust and refusing to switch. The segment would
+              be first-timers instead, which moves the channel, the content and the whole funnel.</p>
           </div>
         </div>
       </div>
 
       <div class="a">
-        <div class="a-top"><span class="a-n">07</span><span class="chip blk">Customer Relationships</span></div>
-        <p class="a-claim"><span class="wb">We believe</span> a weekly cohort of 20&ndash;30 students retains
-          better than the same product used alone.</p>
+        <div class="a-top"><span class="a-n">07</span><span class="chip blk">Cost Structure</span><span class="chip">Operating</span></div>
+        <p class="a-claim"><span class="wb">We believe</span> one person can run the four-gate check and
+          re-score the whole catalogue in under eight hours a month.</p>
         <div class="a-rows">
           <div>
             <h5>How I test it</h5>
-            <p>Concierge it. Run a cohort manually for four weeks with a group chat and a spreadsheet
-              &mdash; no product at all, just me. Track how many still post a thesis in week four.
-              <span class="cost-tag">Cost: my time &middot; Time: 4 weeks</span></p>
+            <p>Time the desk audit while running it. Thirty vendors once, hours recorded honestly rather
+              than estimated afterwards.
+              <span class="cost-tag">Cost: $0 &middot; Time: 2 weeks</span></p>
           </div>
           <div>
             <h5>What would disprove it</h5>
-            <p>Week-four participation under 40%. Cohorts are expensive to run; if they don't hold people,
-              the relationships block is wrong.</p>
+            <p>Over twenty hours a month. The catalogue could not grow without either automation or paid
+              help, and the cost structure stops being near-zero.</p>
           </div>
         </div>
       </div>
 
       <div class="a">
-        <div class="a-top"><span class="a-n">08</span><span class="chip blk">Cost Structure</span></div>
-        <p class="a-claim"><span class="wb">We believe</span> a funded student can be acquired for under
-          $15 through campus organisations and short-form video.</p>
+        <div class="a-top"><span class="a-n">08</span><span class="chip blk">Key Activities</span><span class="chip">Legal</span></div>
+        <p class="a-claim"><span class="wb">We believe</span> publicly scoring and delisting named vendors
+          is defensible when every judgement rests only on that vendor's own published documents.</p>
         <div class="a-rows">
           <div>
             <h5>How I test it</h5>
-            <p>$50 of ads to the smoke-test page. Divide spend by funded accounts, not by email signups.
-              <span class="cost-tag">Cost: $50 &middot; Time: 3 days</span></p>
+            <p>One consult, plus the standing rule already enforced in the codebase: nothing invented is
+              ever published against a real vendor name, and sample figures are marked as sample figures
+              everywhere they appear.
+              <span class="cost-tag">Cost: one consult &middot; Time: 1 week</span></p>
           </div>
           <div>
             <h5>What would disprove it</h5>
-            <p>Cost per funded account above $15 against $60 of annual revenue. Payback stretches past a
-              student's remaining time on campus, and the institutional licence becomes the only model.</p>
+            <p>Counsel advising that comparative scoring of named sellers carries unacceptable risk. The
+              site would publish criteria and pass or fail, and stop publishing a number.</p>
           </div>
         </div>
       </div>
@@ -547,8 +604,8 @@
     <div class="sec-head">
       <p class="sec-num">05 &mdash; Order of operations</p>
       <h2 class="serif">What I'd actually do, in order</h2>
-      <p class="sec-sub">Move down a rung only when the one above gives a strong signal. Everything above
-        rung five costs less than a tank of gas.</p>
+      <p class="sec-sub">Move down a rung only when the one above gives a strong signal. Every rung above
+        the last one costs nothing but time, which is the whole argument for doing them first.</p>
     </div>
 
     <div class="ladder">
@@ -556,46 +613,50 @@
         <div class="r-n">1</div>
         <div>
           <h4>Conversation &mdash; this week</h4>
-          <p>15 interviews with FGCU students who have income. Tests assumptions 02 and 06, and it is the
-            only rung that can tell me the root cause itself is wrong. Don't pitch. Listen.</p>
+          <p>15 interviews with people who have actually bought, and 50 community threads read closely.
+            Tests assumptions 03 and 06, and it is the only rung that can tell me the root cause itself is
+            wrong. Don't pitch. Listen.</p>
         </div>
         <div class="r-cost"><b>$0</b>this week</div>
       </div>
       <div class="rung now">
         <div class="r-n">2</div>
         <div>
-          <h4>Landing page and deposit smoke test</h4>
-          <p>One page explaining the offer, ending in a $25 deposit step and a $5/month checkout. This is
-            the leap-of-faith test, and it settles assumptions 03 and 08 in the same run.</p>
+          <h4>The thirty-vendor desk audit</h4>
+          <p>Four gates against thirty vendors' own public pages, timed while I run it. This is the
+            leap-of-faith test and it settles assumptions 01 and 07 in the same pass. A spreadsheet, not a
+            product.</p>
         </div>
-        <div class="r-cost"><b>$20&ndash;50 ads</b>3 days</div>
+        <div class="r-cost"><b>$0</b>2 weeks</div>
       </div>
-      <div class="rung">
+      <div class="rung now">
         <div class="r-n">3</div>
         <div>
-          <h4>Concierge cohort</h4>
-          <p>Run four weeks by hand for 20 students &mdash; group chat, spreadsheet, me writing the weekly
-            brief myself. No product. Tests assumptions 04 and 07.</p>
+          <h4>Five affiliate applications</h4>
+          <p>Runs in parallel from day one because the replies are slow and the answer is binary
+            (assumption 02). The application states the delisting policy up front, so a rejection is data
+            rather than a surprise later.</p>
         </div>
-        <div class="r-cost"><b>My time</b>4 weeks</div>
+        <div class="r-cost"><b>$0</b>2 weeks</div>
       </div>
       <div class="rung">
         <div class="r-n">4</div>
         <div>
-          <h4>Legal and partner confirmation</h4>
-          <p>Runs in parallel from day one, because it is binary and it gates everything downstream
-            (assumption 01). There is no point building on rails I cannot legally use.</p>
+          <h4>Publish the independence statement and measure</h4>
+          <p>The methodology page states how the site earns and that commission never moves a score. Post
+            it where it will be argued with. Tests assumptions 04 and 05.</p>
         </div>
-        <div class="r-cost"><b>One consult</b>1 week</div>
+        <div class="r-cost"><b>$0</b>30 days</div>
       </div>
       <div class="rung">
         <div class="r-n">5</div>
         <div>
-          <h4>MVP</h4>
-          <p>The smallest thing that delivers the loop: prompt, thesis, funded trade, scored review.
-            Only after every rung above has come back green.</p>
+          <h4>Replace the sample data with verified listings</h4>
+          <p>The site already exists, which does not mean this rung is done &mdash; it means the opposite.
+            Every figure on it is currently marked as sample data. The real milestone is the first listing
+            whose numbers came from a COA that passed all four gates.</p>
         </div>
-        <div class="r-cost"><b>Weeks of work</b>expensive</div>
+        <div class="r-cost"><b>My time</b>weeks</div>
       </div>
     </div>
   </div>
@@ -610,19 +671,19 @@
     </div>
     <div class="next">
       <div class="card">
-        <h3>Book ten interviews</h3>
-        <p>Students with part-time income. The two questions that matter: what can you explain, and what
-          have you actually done. The gap between those two answers is the whole business.</p>
+        <h3>Run the thirty-vendor audit</h3>
+        <p>Four gates, one spreadsheet, hours recorded. It is the leap-of-faith test, the supply test and
+          the operating-cost test at the same time, and it costs nothing but a weekend.</p>
       </div>
       <div class="card">
-        <h3>Build the smoke-test page</h3>
-        <p>Single page, deposit step, checkout. It doubles as the Module 3 landing page assignment, so it
-          gets built either way.</p>
+        <h3>Apply to five affiliate programmes</h3>
+        <p>Stating the delisting policy in the application. Slowest thread and the one that decides whether
+          this revenue model is possible at all, so it starts first.</p>
       </div>
       <div class="card">
-        <h3>Email two BaaS providers</h3>
-        <p>Three questions: minimum account size, whether they onboard student-founded apps, and what
-          registration they expect from me. Slowest thread, so start it first.</p>
+        <h3>Write the independence statement</h3>
+        <p>How the site earns, and that commission never moves a score, in plain words on the methodology
+          page. Written before launch, not after somebody asks.</p>
       </div>
     </div>
   </div>
@@ -630,10 +691,12 @@
 
 <footer>
   <div class="wrap">
-    <p>Thesis is a first-draft business model canvas, not a company. Every figure on this page is an
+    <p>This is a first-draft business model canvas, not a company. Every figure on this page is an
       assumption I intend to test, and several of them are probably wrong &mdash; which is the point of
       writing them down somewhere they can be checked.</p>
-    <p>Nothing on this page is investment advice.</p>
+    <p>PeptideChecker operates no laboratory and commissions no testing. It verifies evidence that already
+      exists. Nothing here is medical advice, and everything listed on the site itself is marked for
+      research purposes only.</p>
     <p style="margin-top:20px;color:#4a5361">Kevin Cockman &middot; ENT 3114 New Venture Laboratory &middot;
       Daveler &amp; Kauanui School of Entrepreneurship &middot; Florida Gulf Coast University &middot; August 2026</p>
   </div>
